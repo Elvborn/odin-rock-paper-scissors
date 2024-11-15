@@ -34,15 +34,31 @@ function playRound(playerChoice, computerChoice){
             if(computerChoice === "paper")
                 playerWon = true;
         break;
+        default:
+            return "Please enter valid value!";
+            break;
     }
 
     if(playerWon){
         humanScore++;
-        return `You won! ${playerChoice} beats ${computerChoice}`;
+        return `You win this round! ${playerChoice} beats ${computerChoice}`;
     }
 
     computerScore++;
-    return `You lose! ${computerChoice} beats ${playerChoice}`;
+    return `You lose this round! ${computerChoice} beats ${playerChoice}`;
 }
 
-console.log(playRound(getUserChoice(), getComputerChoice()));
+function playGame(){
+
+    while(humanScore < 3 && computerScore < 3){
+        console.log(playRound(getUserChoice(), getComputerChoice()));
+    }
+
+
+    if(humanScore > computerScore)
+        console.log("You win!!!!");
+    else
+        console.log("You lose!!!");
+}
+
+playGame();
