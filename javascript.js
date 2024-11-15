@@ -73,7 +73,7 @@ function outputGameInfo(str){
     computerScore = 0;
 }
 
-btnRock.addEventListener("click", function(){
+btnRock.addEventListener("click", function(e){
     outputGameInfo(playRound("rock", getComputerChoice()));
 });
 
